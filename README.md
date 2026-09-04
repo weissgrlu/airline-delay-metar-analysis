@@ -54,3 +54,7 @@ Naše analýza primárně čerpá ze dvou veřejně dostupných datových sad.
 | **Comprehensive** (Komplexnost) | **Vysoká** | Obsahuje kompletní přehled letů velkých aerolinek a klíčový identifikátor letadla (`Tail_Number`) nutný pro trasování rotace. | Zahrnuje jak pravidelné zprávy, tak mimořádné zprávy SPECI zachycující přesný nástup bouřek (TSRA) či pokles dohlednosti. |
 | **Current** (Aktuálnost) | **Vysoká** | Stabilizovaná, validovaná historická data za klíčové referenční léto 2023. | Kompletní, neměnná historická časová řada za sledované období červenec 2023. |
 | **Cited** (Citovatelnost) | **Vysoká** | Standardizovaná metodika DOT pro vykazování provozní spolehlivosti komerčních letů. | Mezinárodní formát WMO/ICAO pro kódování zpráv METAR s jasně doloženou dokumentací API. |
+
+### Rozsah datových souborů
+Zprávy METAR dohromady obsahují asi 36 000 řádků (přibližně 9 000 řádků na jedno letiště), velikost souborů je v řádech jednotek MB.
+Údaje o leteckém provozu v USA za měsíc červenec obsahují přibližně 600 000 řádků a datový soubor má velikost přibližně 250 MB.
