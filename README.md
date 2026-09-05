@@ -126,3 +126,20 @@ Typický příklad provozní absorpce zpoždění v rámci denní rotace:
 | **Leg 3** | ATL $\rightarrow$ SAN | 2023-07-03 01:16 | **-1 min** | 466 min | **Absorpce:** Dostatečný buffer skluz zcela vymazal |
 
 > **Klíčové zjištění 2:** Tento krok potvrdil nutnost zavedení **absorpčního cutoffu** pro Krok 3 – kaskáda indukovaného zpoždění nepokračuje donekonečna, ale zaniká ve chvíli, kdy dostatečný pozemní buffer stlačí zpoždění pod 15 minut, případně po noční provozní pauze.
+
+### 3. analýza
+Pomocí řetězení v rámci denních rotací jednotlivých strojů (`Tail_Number`) byl měřen přenos primárního meteorologického zpoždění na navazující lety téhož dne:
+
+| Metrika řetězení | Hodnota | Manažerský a metodický význam |
+| :--- | :---: | :--- |
+| **Primární spouštěcí lety** | **3 917** | Lety se zpožděním > 15 min v podmínkách IMC/bouřky |
+| **Primární zpoždění na spouštěčích** | **344 091 min** | Přímý dopad nepříznivého počasí na hubu (~88 min / let) |
+| **Indukované zpožděné lety** | **529** | Následné lety stroje infikované skluzem z předchozího počasí |
+| **Indukované sekundární zpoždění** | **38 317 min** | Zpoždění vykazované jako *Late Aircraft* s meteorologickým původem |
+| **Kaskádový index (Cascade Multiplier)** | **0,11×** | Na 1 minutu primárního počasí vzniká 0,11 min sekundárního zpoždění |
+| **Finanční škoda (FAA benchmark $100/min)** | **$3 831 700** | Přímá finanční ztráta z indukovaných zpoždění za jediný měsíc |
+
+> **Klíčové zjištění 3:**
+> * **Neprávem penalizovaný provoz:** Minimálně **38 317 minut** zpoždění (ekvivalent **$3,83 mil. USD**), které interní controlling aerolinky vykazuje jako provozní selhání letištního personálu a pozemních rotací (*Late Aircraft Arrival*), vzniklo prokazatelně jako sekundární důsledek konvektivního počasí.
+> **Klíčové zjištění 4:**
+> * **Proč je index 0,11× konzervativní:** Analýza sleduje pouze odlety ze 4 páteřních hubů. Pokud stroj po bouřce na hubu rotoval přes regionální letiště (kde absorboval část skluzu a náš dataset ho neviděl), do výpočtu nevstoupil. Skutečný kaskádový násobitel napříč celou sítí je proto podstatně vyšší.
