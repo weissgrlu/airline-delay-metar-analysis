@@ -110,3 +110,19 @@ Porovnání odletového zpoždění (`DepDelay`) a oficiálních složek zpožd�
 | **Celkový součet / průměr** | **84 148** | **30,6 %** | **23,4 min** | **0 min** | **119 438** | **808 510** | **6,8×** |
 
 > **Klíčové zjištění 1:** Oficiální statistika zachycuje pouze zlomek problému. Na každou 1 minutu oficiálně přiznaného meteorologického zpoždění připadá v síti 6,8 minut sekundárních zpoždění vykazovaných jako čekání na pozdní přílet letadla (`LateAircraftDelay`).
+### 2. analýza
+Pro analýzu dominového efektu bylo nutné transformovat izolované záznamy o letech na chronologické řetězce jednotlivých strojů v čase (UTC):
+
+* **Identifikace flotily:** Sledováno celkem **4 817 unikátních letadel**, přičemž maximální denní vytížení na sledovaných hubech dosáhlo **6 navazujících odletů** na jeden stroj.
+* **Plánované rozestupy:** Průměrný časový odstup mezi dvěma odlety stejného letadla z hubu činil **370,5 minuty** (~6,2 h), což zahrnuje jak standardní pozemní obrat, tak mezilehlé rotace na regionální letiště mimo auditované huby.
+
+#### Případová ukázka absorpce skluzu (Letoun N101DQ | 2. července 2023)
+Typický příklad provozní absorpce zpoždění v rámci denní rotace:
+
+| Leg | Trasa | Plánovaný odlet (UTC) | DepDelay | Rozestup (Buffer) | Výsledný stav |
+| :---: | :---: | :---: | :---: | :---: | :--- |
+| **Leg 1** | ATL $\rightarrow$ IAH | 2023-07-02 11:05 | **0 min** | — | Výchozí let dne – odlet přesně načas |
+| **Leg 2** | ATL $\rightarrow$ LGA | 2023-07-02 17:30 | **+17 min** | 385 min | Vznik provozního zpoždění (> 15 min) |
+| **Leg 3** | ATL $\rightarrow$ SAN | 2023-07-03 01:16 | **-1 min** | 466 min | **Absorpce:** Dostatečný buffer skluz zcela vymazal |
+
+> **Klíčové zjištění 2:** Tento krok potvrdil nutnost zavedení **absorpčního cutoffu** pro Krok 3 – kaskáda indukovaného zpoždění nepokračuje donekonečna, ale zaniká ve chvíli, kdy dostatečný pozemní buffer stlačí zpoždění pod 15 minut, případně po noční provozní pauze.
