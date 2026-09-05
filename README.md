@@ -96,3 +96,17 @@ Veškeré operace čištění a úpravy jsou provedeny v `notebooks/project_jupy
 | **Meteorologický kontext** | Surový textový řetězec | **Strukturované FAA kategorie** | Připraveno pro analytické modelování |
 
 ## 4. FÁZE: ANALYSE
+V této části uvedeme výsledky analýzy dat, která je v Pythonu provedena v souboru `project_jupyter_files.ipynb`. Analýza je logicky rozdělená do 4. odstavců.
+
+### 1. analýza
+Porovnání odletového zpoždění (`DepDelay`) a oficiálních složek zpoždění napříč letovými kategoriemi FAA za červenec 2023 (84 148 odletů ze 4 hubů - letišť):
+
+| Letová kategorie (FAA) | Celkem letů | Zpoždění > 15 min (%) | Průměrné zpoždění | Medián | Weather Delay (min) | Late Aircraft Delay (min) | Poměr (Late / Weather) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **VFR** (Vizuální podmínky) | 77 597 | 30,3 % | 23,0 min | 0 min | 100 841 | 742 583 | **7,4×** |
+| **MVFR** (Mezní podmínky) | 5 170 | 30,9 % | 26,1 min | 0 min | 12 474 | 50 036 | **4,0×** |
+| **IFR** (Přístrojové podmínky) | 1 439 | 40,0 % | 30,8 min | 7 min | 5 997 | 15 500 | **2,6×** |
+| **LIFR** (Nízké přístrojové) | 26 | 57,7 % | 74,6 min | 28 min | 126 | 391 | **3,1×** |
+| **Celkový součet / průměr** | **84 148** | **30,6 %** | **23,4 min** | **0 min** | **119 438** | **808 510** | **6,8×** |
+
+> **Klíčové zjištění 1:** Oficiální statistika zachycuje pouze zlomek problému. Na každou 1 minutu oficiálně přiznaného meteorologického zpoždění připadá v síti 6,8 minut sekundárních zpoždění vykazovaných jako čekání na pozdní přílet letadla (`LateAircraftDelay`).
