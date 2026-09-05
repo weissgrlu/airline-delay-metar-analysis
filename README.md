@@ -141,5 +141,6 @@ Pomocí řetězení v rámci denních rotací jednotlivých strojů (`Tail_Numbe
 
 > **Klíčové zjištění 3:**
 > * **Neprávem penalizovaný provoz:** Minimálně **38 317 minut** zpoždění (ekvivalent **$3,83 mil. USD**), které interní controlling aerolinky vykazuje jako provozní selhání letištního personálu a pozemních rotací (*Late Aircraft Arrival*), vzniklo prokazatelně jako sekundární důsledek konvektivního počasí.
+
 > **Klíčové zjištění 4:**
 > * **Proč je index 0,11× konzervativní:** Analýza sleduje pouze odlety ze 4 páteřních hubů. Pokud stroj po bouřce na hubu rotoval přes regionální letiště (kde absorboval část skluzu a náš dataset ho neviděl), do výpočtu nevstoupil. Skutečný kaskádový násobitel napříč celou sítí je proto podstatně vyšší.
