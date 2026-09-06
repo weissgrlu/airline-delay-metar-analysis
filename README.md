@@ -144,3 +144,23 @@ Pomocí řetězení v rámci denních rotací jednotlivých strojů (`Tail_Numbe
 
 > **Klíčové zjištění 4:**
 > * **Proč je index 0,11× konzervativní:** Analýza sleduje pouze odlety ze 4 páteřních hubů. Pokud stroj po bouřce na hubu rotoval přes regionální letiště (kde absorboval část skluzu a náš dataset ho neviděl), do výpočtu nevstoupil. Skutečný kaskádový násobitel napříč celou sítí je proto podstatně vyšší.
+
+### 4. analýza
+Srovnání schopnosti vstřebat nepříznivé počasí mezi 4 páteřními uzly a vyčíslení skrytých finančních škod (přímé provozní náklady dle FAA: 100 USD / minuta zpoždění):
+
+| Hub (IATA) | Celkem odletů | Primární spouštěče | Indukované lety | Kaskádový index | Primární zpoždění (min) | Indukované zpoždění (min) | Finanční škoda (Indukovaná) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ORD** (Chicago) | 21 231 | 1 508 | 172 | **0,094×** | 142 898 | 13 486 | **$1 348 600** |
+| **ATL** (Atlanta) | 28 329 | 1 586 | 173 | **0,085×** | 110 361 | 9 341 | **$934 100** |
+| **DFW** (Dallas) | 24 780 | 262 | 119 | **0,432×** | 20 435 | 8 823 | **$882 300** |
+| **JFK** (New York) | 9 892 | 561 | 65 | **0,095×** | 70 397 | 6 667 | **$666 700** |
+| **Celkem / Průměr** | **84 148** | **3 917** | **529** | **0,111×** | **344 091** | **38 317** | **$3 831 700** |
+
+#### Časový profil eskalace dominového efektu
+Rozpad sekundárního zpoždění podle plánované hodiny odletu odhaluje kritické provozní okno:
+
+* **Špička přenosu indukovaného zpoždění (22:00–02:00 UTC / 17:00–21:00 lokálně):** V tomto pětihodinovém okně vzniká přes **23 300 minut** (více než 60 %) veškerých indukovaných zpoždění celého dne.
+* **Absolutní vrchol v 01:00 UTC (20:00 CDT):** Samotná 1. hodina ranní v UTC kumuluje **6 354 minut** indukovaného skluzu, což je přímý následek návratu zpožděných letadel z odpoledních bouřkových linek na centrální báze.
+
+> **Klíčové zjištění 5:**  
+> Zranitelnost Dallasu (DFW) s indexem **0,432×** ukazuje na poddimenzované turnround buffery v odpoledních vlnách American Airlines. Právě sem a do večerního časového okna 17:00–21:00 lokálního času by mělo řízení provozu firmy přednostně směrovat záložní letadla.
