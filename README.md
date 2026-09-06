@@ -212,6 +212,5 @@ Cílem vizualizační fáze bylo převést analytická zjištění do uceleného
   * **Časový profil eskalace (UTC):** Histogram odhalující kritické provozní okno **22:00–02:00 UTC** (17:00–21:00 lokálně), ve kterém vzniká přes 60 % veškerých indukovaných zpoždění dne.
   * **Ganttův diagram rotace:** Časová osa jednoho operačního dne demonstrující, jak primární skluz v chicagském hubu ORD (+61 min) vyčerpal pozemní buffer a způsobil sekundární noční zpoždění na lince do State College SCE (+46 min).
   * **Interaktivní filtr:** Možnost přepínání registrací letadel (`Tail_Number`) pro audit libovolné rotace ve flotile.
- 
-  **Živá interaktivní vizualizace na Tableau Public:**
-  *[https://public.tableau.com/views/google-data-analytics-cyclistics/CyclisticExecutiveDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/app/profile/lukas.weissgrab/viz/TheHiddenCostofWeather/Story_The_Hidden_Cost_of_Weather?publish=yes))*
+
+ **Živá interaktivní vizualizace na Tableau Public:** *[https://public.tableau.com/views/google-data-analytics-cyclistics/CyclisticExecutiveDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/app/profile/lukas.weissgrab/viz/TheHiddenCostofWeather/Story_The_Hidden_Cost_of_Weather?publish=yes))*
