@@ -214,3 +214,18 @@ Cílem vizualizační fáze bylo převést analytická zjištění do uceleného
   * **Interaktivní filtr:** Možnost přepínání registrací letadel (`Tail_Number`) pro audit libovolné rotace ve flotile.
 
  **Živá interaktivní vizualizace na Tableau Public:** *[https://public.tableau.com/views/google-data-analytics-cyclistics/CyclisticExecutiveDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/app/profile/lukas.weissgrab/viz/TheHiddenCostofWeather/Story_The_Hidden_Cost_of_Weather?publish=yes))*
+
+ ## 6. Fáze: ACT (Závěr a strategická doporučení)
+Na základě vyvedené analýzy 84 148 letů, rekonstrukce rotací 4 817 letadel a kvantifikace dominového efektu byla pro vedení letového provozu (OCC) a finanční controlling formulována tato opatření:
+
+### Klíčová akční doporučení
+1. **Redesign odpoledních mezer mezi provozem na DFW (Dallas):** S ohledem na vysoký kaskádový index uzlu (0,432×) zavést dynamické prodloužení pozemních obratů v čase odpoledních konvektivních bouřek.
+3. **Cílená dislokace hot spares:** Umisťovat záložní letadla a posádky na uzly ORD a DFW s předstihem před kritickým oknem 22:00–02:00 UTC (17:00–21:00 lokálně), kdy eskaluje přes 60 % kaskádových zpoždění.
+4. **Úprava controllingových metrik:** Očistit provozní hodnocení bází od 3,83 mil. USD sekundárních ztrát, které systémově vznikají jako dominový efekt počasí, nikoliv selháním personálu.
+
+
+## O autorovi
+* **Autor:** Lukáš Weissgráb
+* **Nástroje projektu:** Google BigQuery (SQL), Tableau Public, Git / GitHub
+* **Portfolio & Odkazy:** [LinkedIn](www.linkedin.com/in/lukáš-weissgráb-3ba51428a) | [Tableau Public](https://public.tableau.com/app/profile/lukas.weissgrab/vizzes)
+
