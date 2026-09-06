@@ -182,7 +182,9 @@ Rozpad sekundárního zpoždění podle plánované hodiny odletu odhaluje kriti
    * **Kritické okno (22:00–02:00 UTC / 17:00–21:00 lokálně):** V této podvečerní vlně vzniká přes 60 % veškerých kaskádových zpoždění dne, kdy se zpožděné stroje vracejí na základny.
 
 ### Datové výstupy pro fázi SHARE
-Veškeré analytické transformace proběhly v notebooku `notebooks/03_analyze_rotations_and_cascades.ipynb`. Pro vizualizaci v Tableau byly vygenerovány 3 agregované datasety v `data/processed/`:
+Veškeré analytické transformace proběhly v notebooku `notebooks/project_jupyter_files.ipynb`. Pro vizualizaci v Tableau byly vygenerovány 3 agregované datasety v `data/processed/`:
 * `tableau_hub_resilience.csv` – Srovnání odolnosti hubů, kaskádových indexů a finančních ztrát.
 * `tableau_delay_breakdown.csv` – Bilanční srovnání oficiálního reportingu BTS vs. auditovaného stavu.
 * `tableau_sample_rotations_gantt.csv` – Časové podklady pro Ganttův diagram rotací infikovaných letadel.
+
+## 5. FÁZE: SHARE
