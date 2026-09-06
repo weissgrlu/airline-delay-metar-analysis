@@ -164,3 +164,25 @@ Rozpad sekundárního zpoždění podle plánované hodiny odletu odhaluje kriti
 
 > **Klíčové zjištění 5:**  
 > Zranitelnost Dallasu (DFW) s indexem **0,432×** ukazuje na poddimenzované turnround buffery v odpoledních vlnách American Airlines. Právě sem a do večerního časového okna 17:00–21:00 lokálního času by mělo řízení provozu firmy přednostně směrovat záložní letadla.
+
+
+### Shrnutí analýzy
+1. **Skrytá stopa počasí (Poměr 6,8 : 1):**
+   * Vykázaná zpoždění z čekání na letadlo (`LateAircraftDelay`: 808,5 tis. min) převyšují oficiální zpoždění způsobená počasím (`WeatherDelay`: 119,4 tis. min) téměř sedminásobně.
+   * I při optimálních vizuálních podmínkách (VFR) bylo zaznamenáno přes 742 tisíc minut zpoždění letadel, která si přivezla skluz z předchozích letů.
+
+2. **Kvantifikace dominového efektu a finanční dopad:**
+   * **3 917 primárních letů** zasažených nepříznivým počasím (IMC/bouřka) vygenerovalo **529 sekundárně infikovaných rotací**.
+   * Identifikováno **38 317 minut indukovaného zpoždění**, které interní reporting neoprávněně připisuje provoznímu selhání pozemního personálu.
+   * Při standardním FAA benchmarku (100 $/min) činí přímá finanční škoda z tohoto dominového efektu **3,83 mil. USD** (konzervativní odhad v rámci sledovaných hubů).
+
+3. **Zranitelnost uzlů a časová okna (DFW vs. ORD):**
+   * **Dallas/Fort Worth (DFW)** vykázal nejvyšší **Kaskádový index (0,432×)** – těsný letový řád v odpoledních špičkách nedokáže absorbovat zpoždění z konvektivních bouří.
+   * **Chicago (ORD)** utrpělo nejvyšší absolutní škodu (**$1,35 mil. USD**).
+   * **Kritické okno (22:00–02:00 UTC / 17:00–21:00 lokálně):** V této podvečerní vlně vzniká přes 60 % veškerých kaskádových zpoždění dne, kdy se zpožděné stroje vracejí na základny.
+
+### Datové výstupy pro fázi SHARE
+Veškeré analytické transformace proběhly v notebooku `notebooks/03_analyze_rotations_and_cascades.ipynb`. Pro vizualizaci v Tableau byly vygenerovány 3 agregované datasety v `data/processed/`:
+* `tableau_hub_resilience.csv` – Srovnání odolnosti hubů, kaskádových indexů a finančních ztrát.
+* `tableau_delay_breakdown.csv` – Bilanční srovnání oficiálního reportingu BTS vs. auditovaného stavu.
+* `tableau_sample_rotations_gantt.csv` – Časové podklady pro Ganttův diagram rotací infikovaných letadel.
