@@ -188,3 +188,30 @@ Veškeré analytické transformace proběhly v notebooku `notebooks/project_jupy
 * `tableau_sample_rotations_gantt.csv` – Časové podklady pro Ganttův diagram rotací infikovaných letadel.
 
 ## 5. FÁZE: SHARE
+Cílem vizualizační fáze bylo převést analytická zjištění do uceleného manažerského storyboardu pro vedení letového provozu (OCC) a finanční controlling. Výsledná prezentace v Tableau propojuje systémový pohled na celou síť s detailní mikroskopickou anatomií dominového efektu na konkrétní rotaci letadla. 
+
+### Struktura Tableau Storyboardu
+
+#### Story Point 1: Finanční audit a zkreslení reportingu BTS (`DB_StoryPoint_1`)
+* **Účel:** Vyčíslit rozsah systémového podhodnocení vlivu počasí v oficiální vládní statistice.
+* **Klíčové prvky:**
+  * **KPI souhrnný banner:** Přehled 3 917 primárně zasažených letů, 344 tis. minut primárního skluzu a vyčíslená sekundární finanční škoda **$3 831 700 USD** (38 317 minut kaskády).
+  * **Bilanční rozpad (Oficiální vs. Audit):** Vizuální důkaz, že minimálně 38,3 tis. minut zpoždění vykázaného jako interní selhání (*Late Aircraft*) má původ v meteorologii.
+  * **Provozní degradace dochvilnosti:** Nárůst podílu zpožděných letů z 30,3 % za optimálního počasí (VFR) až na 57,7 % v limitních podmínkách (LIFR).
+
+#### Story Point 2: Geografická odolnost a paradox hubu DFW (`DB_StoryPoint_2`)
+* **Účel:** Identifikovat zranitelnost jednotlivých uzlů a odhalit strukturální limity letových řádů.
+* **Klíčové prvky:**
+  * **Geografická distribuce zpoždění:** Kartogram zobrazující polohu 4 klíčových hubů, kde velikost bodu reprezentuje absolutní objem zpoždění a barva vyjadřuje kaskádový index.
+  * **Srovnávací matice odolnosti:** Přímá konfrontace kaskádového multiplikátoru a finančních škod.
+  * **Manažerský paradox:** Dallas (DFW) sice čelil menšímu absolutnímu počtu bouřek než Chicago (ORD), ale kvůli těsným leteckým řádům vygeneroval nejvyšší kaskádový index sítě (**0,432×**). Chicago ORD naopak utrpělo nejvyšší absolutní finanční ztrátu (**$1,35 mil. USD**).
+
+#### Story Point 3: Anatomie kaskády v denní rotaci (`DB_StoryPoint_3`)
+* **Účel:** Demonstrovat mechanismus přenosu zpoždění v čase a podložit nutnost operativních zásahů OCC.
+* **Klíčové prvky:**
+  * **Časový profil eskalace (UTC):** Histogram odhalující kritické provozní okno **22:00–02:00 UTC** (17:00–21:00 lokálně), ve kterém vzniká přes 60 % veškerých indukovaných zpoždění dne.
+  * **Ganttův diagram rotace:** Časová osa jednoho operačního dne demonstrující, jak primární skluz v chicagském hubu ORD (+61 min) vyčerpal pozemní buffer a způsobil sekundární noční zpoždění na lince do State College SCE (+46 min).
+  * **Interaktivní filtr:** Možnost přepínání registrací letadel (`Tail_Number`) pro audit libovolné rotace ve flotile.
+ 
+  **Živá interaktivní vizualizace na Tableau Public:**
+  *[https://public.tableau.com/views/google-data-analytics-cyclistics/CyclisticExecutiveDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link](https://public.tableau.com/app/profile/lukas.weissgrab/viz/TheHiddenCostofWeather/Story_The_Hidden_Cost_of_Weather?publish=yes))*
